@@ -30,7 +30,6 @@ const Image = styled.div`
 
   position: absolute;
   transition: ${({ theme }) => theme.transition };
-  transition-delay: ${({ theme }) => theme.transitionDelay};
   background-image: url(${({ image }) => image});
   left: ${({ theme }) => theme.left};
   z-index: ${({ theme }) => theme.zIndex};
