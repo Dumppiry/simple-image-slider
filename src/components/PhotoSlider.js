@@ -10,6 +10,7 @@ class PhotoSlider extends React.Component {
     this.images = this.props.images.map(( photo ) => photo.image.url);
 
     console.log(this.props.interval);
+    console.log(this.images);
 
     this.state = {
       firstImage: {
@@ -35,7 +36,7 @@ class PhotoSlider extends React.Component {
   setPhotoInterval = () => {
     let nextImgIndex = 1;
     this.photoInterval = setInterval(() => {
-      if (nextImgIndex + 1 === this.images.length) {
+      if (nextImgIndex + 1 >= this.images.length) {
         nextImgIndex = 0;
       } else {
         nextImgIndex++;
@@ -57,11 +58,11 @@ class PhotoSlider extends React.Component {
         this.setState({
           firstImage: {
             ...this.state.firstImage,
-            image: firstIsNext ? this.images[nextImgIndex] : this.state.firstImage.image
+            image: firstIsNext ? this.state.firstImage.image : this.images[nextImgIndex]
           },
           secondImage: {
             ...this.state.secondImage,
-            image: firstIsNext ? this.state.secondImage.image : this.images[nextImgIndex]
+            image: firstIsNext ? this.images[nextImgIndex] : this.state.secondImage.image
           }
         })
       }, 500);

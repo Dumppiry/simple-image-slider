@@ -2,7 +2,7 @@ import React from 'react'
 import styled, { ThemeProvider } from 'styled-components'
 
 const SlidingImage = ({ isNextImage, image }) => {
-  const theme = isNextImage ? currentImage : nextImage;
+  const theme = isNextImage ? nextImage : currentImage;
 
   return (
     <ThemeProvider theme={theme}>
