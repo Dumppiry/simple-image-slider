@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { graphql } from 'gatsby'
+import '../utils/styles/style.css'
 
 import PhotoSlider from '../components/PhotoSlider'
 
